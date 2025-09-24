@@ -51,10 +51,9 @@ jobs:
             body: 'Deployment failed for commit ${{ github.sha }}'
           })
 
-    # ✅ CORRETO - COPY AND PASTE ESTA LINHA:
-    - name: Notify Sleuth
-      if: success()
-      uses: sleuth-io/sleuth-action@v1
-      with:
-        api_key: ${{ secrets.SLEUTH_API_KEY }}
-        environment: production
+          - name: Notify Sleuth
+          if: success()
+          uses: sleuth-io/sleuth-action@v1
+          with:
+           api_key: ${{ secrets.SLEUTH_API_KEY }}
+           environment: production
